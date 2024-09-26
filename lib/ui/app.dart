@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:serveable_app/ui/pages/home/home_page.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:serveable_app/ui/config/injector/di.dart';
 
-class MyApp extends StatelessWidget {
+class MyApp extends ConsumerWidget {
   const MyApp({super.key});
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
+  Widget build(BuildContext context,ref) {
+    return MaterialApp.router(
+      routerConfig: ref.watch(goRouterProvider),
+      title: 'GoRouter Example',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+        primarySwatch: Colors.blue,
       ),
-      home: const HomePage(),
     );
   }
 }
