@@ -1,7 +1,7 @@
-class Route {
+class AppRoute {
   final String name;
   final String path;
-  Route({
+  AppRoute({
     required this.name,
     required this.path,
   });

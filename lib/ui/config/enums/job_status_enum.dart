@@ -1,0 +1,4 @@
+enum JobStatusEnum {
+  open,
+  closed,
+}
